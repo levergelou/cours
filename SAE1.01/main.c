@@ -3,9 +3,9 @@
  * 
  *  \author LE VERGE Lou
  *  \version 1.0
- *  \date A rendre pour le 26/11/2023
+ *  \date 26/11/2023
  * 
- *  Ce programme permet de jouer au sudoku.
+ *  sudoku
 */
 
 
@@ -15,22 +15,11 @@
 #include <string.h>
 
 
-/** 
- *  \def TAILLE
- *  \brief Taille de la grille
- * 
- *  Cette constante permet de définir la taille de la grille.
-*/
+
 #define TAILLE 9
 
 
-/**
- * \typedef tGrille
- * \brief Tableau de taille TAILLE x TAILLE
- * 
- * Tableau de taille TAILLE x TAILLE qui est composé d'entiers. 
- * Il est utilisé pour stocker la grille de sudoku.
-*/
+
 typedef int tGrille[TAILLE][TAILLE];
 
 void chargerGrille(tGrille grille);
@@ -41,17 +30,6 @@ int possible(tGrille grille, int numLigne, int numColonne, int valeur);
 bool grillePleine(tGrille grille);
 
 
-/**
- * \fn int main()
- * \brief Programme principale
- * \return EXIT_SUCCESS - Arrêt normal du programme.
- * 
- * Le programme principal permet de jouer au sudoku :
- * Il charge une grille depuis un fichier, puis demande à l'utilisateur de saisir les indices de la case et la valeur à insérer.
- * Il vérifie si la valeur est possible, et si c'est le cas, il l'insère dans la grille.
- * Il affiche la grille à chaque tour. Et en fin de partie, il affiche un message de félicitation.
- * Il demande à l'utilisateur s'il veut rejouer.
-*/
 int main()
 {
     tGrille grille, grilleDepart;
@@ -100,16 +78,7 @@ int main()
 }
 
 
-/**
- * \fn void afficherGrille(tGrille grille, tGrille grilleDepart)
- * \brief Affiche la grille
- * \param grille Grille de sudoku
- * \param grilleDepart Grille de sudoku de départ
- * 
- * Cette fonction permet d'afficher la grille de sudoku. 
- * Il affiche les valeurs de la grille de départ en vert.
- * Pour permettre une meilleure lisibilité.
-*/
+
 void afficherGrille(tGrille grille, tGrille grilleDepart)
 {
     int i, j;
@@ -147,14 +116,7 @@ void afficherGrille(tGrille grille, tGrille grilleDepart)
 }
 
 
-/**
- * \fn void chargerGrille(tGrille g)
- * \brief Charge une grille depuis un fichier
- * \param g Grille de sudoku
- * 
- * Cette fonction permet de charger une grille depuis un fichier.
- * Elle vérifie si le fichier est valide et la charge dans la grille si valide. 
-*/
+
 void chargerGrille(tGrille g)
 {
     char nomFichier[20];
@@ -172,16 +134,7 @@ void chargerGrille(tGrille g)
 }
 
 
-/**
- * \fn bool fichierGrilleValide(char *nomFichier)
- * \brief Vérifie si le fichier est valide
- * \param nomFichier Nom du fichier
- * \param valide Booléen
- * \return true si le fichier est valide, false sinon
- * 
- * Cette fonction permet de vérifier si le fichier est valide.
- * Elle vérifie si l'extension est bien .sud et si les valeurs sont bien comprises entre 0 et 9.
-*/
+
 bool fichierGrilleValide(char *nomFichier)
 {
     FILE *fichier;
@@ -222,17 +175,7 @@ bool fichierGrilleValide(char *nomFichier)
 }
 
 
-/**
- * \fn bool grillePleine(tGrille grille)
- * \brief Vérifie si la grille est pleine
- * \param grille Grille de sudoku
- * \param pleine Booléen
- * \return true si la grille est pleine, false sinon
- * 
- * Cette fonction permet de vérifier si la grille est pleine.
- * Elle parcourt la grille et si elle trouve une case vide, elle retourne false.
- * Si elle ne trouve pas de case vide, elle retourne true.
-*/
+
 bool grillePleine(tGrille grille)
 {
     bool pleine;
@@ -252,20 +195,7 @@ bool grillePleine(tGrille grille)
 }
 
 
-/**
- * \fn int possible(tGrille grille, int numLigne, int numColonne, int valeur)
- * \brief Vérifie si la valeur est possible
- * \param grille Grille de sudoku
- * \param numLigne Numéro de la ligne
- * \param numColonne Numéro de la colonne
- * \param valeur Valeur à insérer
- * \param possible Booléen
- * \return true si la valeur est possible, false sinon
- * 
- * Cette fonction permet de vérifier si la valeur est possible.
- * Elle vérifie si la valeur est déjà présente sur la ligne, la colonne et le carré.
-*/
-int possible(tGrille grille, int numLigne, int numColonne, int valeur)
+ possible(tGrille grille, int numLigne, int numColonne, int valeur)
 {
     int i, j, k, l;
     bool possible;
@@ -301,14 +231,7 @@ int possible(tGrille grille, int numLigne, int numColonne, int valeur)
     return possible;
 }
 
-/**
- * \fn void saisirValeur(int *S)
- * \brief Saisie une valeur
- * \param S Pointeur sur la valeur
- * 
- * Cette fonction permet de saisir une valeur.
- * Elle vérifie si la valeur est un entier et si elle est comprise entre 1 et TAILLE.
-*/
+
 void saisirValeur(int *S)
 {
     char chaine[20];
