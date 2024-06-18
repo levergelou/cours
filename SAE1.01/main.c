@@ -1,7 +1,7 @@
 /**
  *  \page Sudoku
  * 
- *  \author NEVOT Pierre
+ *  \author LE VERGE Lou
  *  \version 1.0
  *  \date A rendre pour le 26/11/2023
  * 
