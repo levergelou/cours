@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Technique - Version 2.7.4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Documentation Technique : Machine à courber les bananes</h1>
+        <p>Client : Les Génies du Ponant - Version 2.7.4 - Date de Révision : 20/12/2023</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#en-tete">En-tête de code</a></li>
+            <li><a href="#defines">#define</a></li>
+            <li><a href="#variablesglobales">Variables Globales</a></li>
+            <li><a href="#structures">Structures</a></li>
+            <li><a href="#fonctions">Fonctions</a></li>
+        </ul>
+    </nav>
+
+    <section id="en-tete">
+        <h2>En-tête de code</h2>
+        <figure>
+            <pre>
+                
+  Ce programme permet de gérer une élection et une bibliothèque.
+  Il est composé de deux parties :
+  - la première permet de gérer une élection entre deux candidats
+  - la seconde permet de gérer une bibliothèque
+            </pre>
+        </figure>
+    </section>
+
+    <section id="defines">
+        <h2>#define</h2>
+                    <figure>
+                <h3> Maximum de candidats pour l'élection </h3>
+                <pre>#define MAXC 2  </pre>
+            </figure>
+                            <hr>
+                                <figure>
+                <h3> Maximum de livres dans la bibliothèque </h3>
+                <pre>#define MAXL 50000  </pre>
+            </figure>
+                                <figure>
+                <h3> Maximum de livres dans la bibliothèque </h3>
+                <pre>#define MAXL 50000  </pre>
+            </figure>
+                        </section>
+
+    <section id="variablesglobales">
+        <h2>Variables Globales</h2>
+            </section>
+
+    <section id="structures">
+    <h2>Structures</h2>
+                    <figure>
+            <h3> Type de la structure </h3>
+            <pre>typedef struct {
+    char nom[30];  
+    int age;       
+    int nbVoix;    
+} t_Candidat;    </pre>
+        
+                                    <p>nom[30] :  Nom du candidat </p>
+                                                <p>age :  Âge du candidat </p>
+                                                <p>nbVoix :  Nombre de voix du candidat </p>
+                                                            <hr>
+                </figure>
+                    <figure>
+            <h3>Type de la structure </h3>
+            <pre>typedef struct {
+    int numero;               
+    char nom[30];             
+    char prenom[30];          
+    t_livre livres[MAXL];     
+    int nbEmprunts;           
+} t_lecteur;          </pre>
+        
+                                    <p>numero : Numéro du lecteur </p>
+                                                <p>nom[30] : Nom du lecteur </p>
+                                                <p>prenom[30] : Prénom du lecteur </p>
+                                                <p>livres[MAXL] : Livres empruntés par le lecteur </p>
+                                                <p>nbEmprunts : Nombre d'emprunts du lecteur </p>
+                                                            <hr>
+                </figure>
+                    <figure>
+            <h3> Type de la structure </h3>
+            <pre>typedef struct {
+    int c_ref;                
+    char c_titre[30];         
+    char c_auteur[30];        
+    bool c_present;           
+} t_livre;                   </pre>
+        
+                                    <p>c_ref :  Référence du livre </p>
+                                                <p>c_titre[30] :  Titre du livre </p>
+                                                <p>c_auteur[30] :  Auteur du livre </p>
+                                                <p>c_present :  Disponibilité du livre </p>
+                                                            <hr>
+                </figure>
+                    <figure>
+            <h3> Type de la structure </h3>
+            <pre>typedef struct {
+    int numero;               
+    char nom[30];             
+    char prenom[30];          
+    t_livre livres[MAXL];     
+    int nbEmprunts;           
+} t_lecteur;              </pre>
+        
+                                    <p>numero :  Numéro du lecteur </p>
+                                                <p>nom[30] :  Nom du lecteur </p>
+                                                <p>prenom[30] :  Prénom du lecteur </p>
+                                                <p>livres[MAXL] :  Livres empruntés par le lecteur </p>
+                                                <p>nbEmprunts :  Nombre d'emprunts du lecteur </p>
+                                                            <hr>
+                </figure>
+                    <figure>
+            <h3> Type de la structure </h3>
+            <pre>typedef struct {
+    t_livre c_contenu[MAXL];  
+    int c_nbre;               
+    t_lecteur lecteurs;       
+} t_bib;                 </pre>
+        
+                                    <p>c_contenu[MAXL] :  Contenu de la bibliothèque </p>
+                                                <p>c_nbre :  Nombre de livres dans la bibliothèque </p>
+                                                <p>lecteurs :  Les lecteurs de la bibliothèque </p>
+                                                        </figure>
+        </section>
+
+    
+    <section id="fonctions">
+    <h2>Fonctions</h2>
+            
+        <figure>
+            <h3>Fonction de comparaison de deux candidats.param c1 Premier candidat.param c2 Deuxième candidat.return 1 si c1 a plus de voix ou est plus jeune, -1 si c2 a plus de voix ou est plus jeune, 0 en cas d'égalité.</h3>
+            <pre>
+t_Candidat saisie();
+
+/**
+int compare(t_Candidat c1, t_Candidat c2);
+
+// Exercice 2
+#define MAXL 50000  /** Maximum de livres dans la bibliothèque
+
+typedef struct {
+    int c_ref;                /** Référence du livre
+    char c_titre[30];         /** Titre du livre
+    char c_auteur[30];        /** Auteur du livre
+    bool c_present;           /** Disponibilité du livre
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>c1 Premier candidat.</p>
+                                    <p>c2 Deuxième candidat.</p>
+                            
+                            <p>Retourne :</p>
+                <p>Le candidat saisi.</p>
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction principale pour l'exercice 1.Demande la saisie de deux candidats, les compare et affiche le résultat.</h3>
+            <pre>
+void ex1() {
+    t_Candidat candidat1;
+    t_Candidat candidat2;
+    int resultat;
+
+    candidat1 = saisie();
+    candidat2 = saisie();
+    resultat = compare(candidat1, candidat2);
+    if (resultat == 1) {
+        printf(&quot;Le candidat %s est le gagnant\n&quot;, candidat1.nom);
+    } else {
+        if (resultat == -1) {
+            printf(&quot;Le candidat %s est le gagnant\n&quot;, candidat2.nom);
+        } else {
+            printf(&quot;Egalité\n&quot;);
+        }
+    }
+}</pre>
+
+            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction de saisie d'un candidat.return Le candidat saisi.</h3>
+            <pre>
+t_Candidat saisie() {
+    t_Candidat candidat;
+    printf(&quot;Nom du candidat : &quot;);
+    scanf(&quot;%s&quot;, candidat.nom);
+    printf(&quot;Age du candidat : &quot;);
+    scanf(&quot;%d&quot;, &amp;candidat.age);
+    printf(&quot;Nombre de voix du candidat : &quot;);
+    scanf(&quot;%d&quot;, &amp;candidat.nbVoix);
+    return candidat;
+}</pre>
+
+            
+                            <p>Retourne :</p>
+                <p>Le candidat saisi.</p>
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction de comparaison de deux candidats.param c1 Premier candidat.param c2 Deuxième candidat.return 1 si c1 a plus de voix ou est plus jeune, -1 si c2 a plus de voix ou est plus jeune, 0 en cas d'égalité.</h3>
+            <pre>
+int compare(t_Candidat c1, t_Candidat c2) {
+    if (c1.nbVoix &gt; c2.nbVoix) {
+        return 1;
+    } else {
+        if (c1.nbVoix &lt; c2.nbVoix) {
+            return -1;
+        } else {
+            if (c1.age &gt; c2.age) {
+                return 1;
+            } else {
+                if (c1.age &lt; c2.age) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        }
+    }
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>c1 Premier candidat.</p>
+                                    <p>c2 Deuxième candidat.</p>
+                            
+                            <p>Retourne :</p>
+                <p>1 si c1 a plus de voix ou est plus jeune, -1 si c2 a plus de voix ou est plus jeune, 0 en cas d'égalité.</p>
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction principale pour l'exercice 2.Permet de gérer les actions possibles dans une bibliothèque.</h3>
+            <pre>
+void ex2() {
+    t_bib bib;
+    t_livre livre;
+    int choix;
+    bib.c_nbre = 0;
+    bib.lecteurs.nbLecteurs = 0;
+
+    do {
+        printf(&quot;Choix de l\&#039;action à effectuer : \n&quot;);
+        printf(&quot;1. Afficher un livre\n&quot;);
+        printf(&quot;2. Saisir un livre\n&quot;);
+        printf(&quot;3. Insérer un livre dans une bibliothèque\n&quot;);
+        printf(&quot;4. Afficher la liste des livres d’une bibliothèque\n&quot;);
+        printf(&quot;5. Enregistrer l’emprunt d’un livre de la bibliothèque\n&quot;);
+        printf(&quot;6. Ajouter un lecteur dans une bibliothèque\n&quot;);
+        printf(&quot;7. Quitter\n&quot;);
+        scanf(&quot;%d&quot;, &amp;choix);
+
+        switch (choix) {
+            case 1:
+                livre = saisieLivre();
+                afficheLivre(livre);
+                break;
+            case 2:
+                livre = saisieLivre();
+                break;
+            case 3:
+                insertion(livre, bib);
+                break;
+            case 4:
+                afficheBib(bib);
+                break;
+            case 5:
+                emprunt(bib);
+                break;
+            case 6:
+                ajoutLecteur(bib);
+                break;
+            case 7:
+                printf(&quot;Au revoir\n&quot;);
+                break;
+            default:
+                printf(&quot;Choix invalide\n&quot;);
+                break;
+        }
+    } while (choix != 7);
+}</pre>
+
+            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction d'affichage d'un livre.param livre Le livre à afficher.</h3>
+            <pre>
+void afficheLivre(t_livre livre) {
+    printf(&quot;Référence : %d\n&quot;, livre.c_ref);
+    printf(&quot;Titre : %s\n&quot;, livre.c_titre);
+    printf(&quot;Auteur : %s\n&quot;, livre.c_auteur);
+    printf(&quot;Présent : %d\n&quot;, livre.c_present);
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>livre Le livre à afficher.</p>
+                            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction de saisie d'un livre.return Le livre saisi.</h3>
+            <pre>
+t_livre saisieLivre() {
+    t_livre livre;
+    printf(&quot;Référence : &quot;);
+    scanf(&quot;%d&quot;, &amp;livre.c_ref);
+    printf(&quot;Titre : &quot;);
+    scanf(&quot;%s&quot;, livre.c_titre);
+    printf(&quot;Auteur : &quot;);
+    scanf(&quot;%s&quot;, livre.c_auteur);
+    printf(&quot;Présent : &quot;);
+    scanf(&quot;%d&quot;, &amp;livre.c_present);
+    return livre;
+}</pre>
+
+            
+                            <p>Retourne :</p>
+                <p>Le livre saisi.</p>
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction d'insertion d'un livre dans une bibliothèque.param livre Le livre à insérer.param bib La bibliothèque où insérer le livre.</h3>
+            <pre>
+void insertion(t_livre livre, t_bib bib) {
+    bib.c_contenu[bib.c_nbre] = livre;
+    bib.c_nbre = bib.c_nbre + 1;
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>livre Le livre à insérer.</p>
+                                    <p>bib La bibliothèque où insérer le livre.</p>
+                            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction d'affichage de la liste des livres d'une bibliothèque.param bib La bibliothèque à afficher.</h3>
+            <pre>
+void afficheBib(t_bib bib) {
+    int i;
+    for (i = 0; i &lt; bib.c_nbre; i++) {
+        afficheLivre(bib.c_contenu[i]);
+    }
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>bib La bibliothèque à afficher.</p>
+                            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction d'enregistrement de l'emprunt d'un livre de la bibliothèque.param bib La bibliothèque où enregistrer l'emprunt.</h3>
+            <pre>
+void emprunt(t_bib bib) {
+    int ref;
+    printf(&quot;Référence du livre à emprunter : &quot;);
+    scanf(&quot;%d&quot;, &amp;ref);
+    bib.c_contenu[ref].c_present = 0;
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>bib La bibliothèque où enregistrer l'emprunt.</p>
+                            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction d'ajout d'un lecteur dans une bibliothèque.param bib La bibliothèque où ajouter le lecteur.</h3>
+            <pre>
+void ajoutLecteur(t_bib bib) {
+    bib.lecteurs.nbLecteurs = bib.lecteurs.nbLecteurs + 1;
+    bib.lecteurs.lecteurs[bib.lecteurs.nbLecteurs].numero = bib.lecteurs.nbLecteurs;
+    printf(&quot;Nom du lecteur : &quot;);
+    scanf(&quot;%s&quot;, bib.lecteurs.lecteurs[bib.lecteurs.nbLecteurs].nom);
+    printf(&quot;Prénom du lecteur : &quot;);
+    scanf(&quot;%s&quot;, bib.lecteurs.lecteurs[bib.lecteurs.nbLecteurs].prenom);
+}</pre>
+
+                            <p>Paramètres :</p>
+                                    <p>bib La bibliothèque où ajouter le lecteur.</p>
+                            
+            
+        </figure>
+                    <hr>
+                    
+        <figure>
+            <h3>Fonction principale pour les deux exercices.return 0 si tout s'est bien déroulé.</h3>
+            <pre>
+int main() {
+    int choix;
+    printf(&quot;Choix de l\&#039;exercice à lancer : \n&quot;);
+    printf(&quot;1. Exercice 1\n&quot;);
+    printf(&quot;2. Exercice 2\n&quot;);
+    scanf(&quot;%d&quot;, &amp;choix);
+
+    switch (choix) {
+        case 1:
+            ex1();
+            break;
+        case 2:
+            ex2();
+            break;
+        default:
+            printf(&quot;Choix invalide\n&quot;);
+            break;
+    }
+
+    return 0;
+}</pre>
+
+            
+                            <p>Retourne :</p>
+                <p>0 si tout s'est bien déroulé.</p>
+            
+        </figure>
+                </section>
+
+
+    <footer>
+        <p>NEVOT Pierre, LE VERGE Lou, GOGDET Mael, CHAPLAIS Ethan</p>
+    </footer>
+
+</body>
+</html>

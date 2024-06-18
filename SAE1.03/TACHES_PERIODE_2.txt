@@ -1,0 +1,4 @@
+LE VERGE Lou - 20 gendoc-user.php, gendoc.sh
+NEVOT Pierre - 40% gendoc-user.php, gendoc-tech.php, gendoc.sh
+GOGDET Mael - 15%  gendoc-tech.php 
+CHAPLAIS Ethan - 15% gendoc-user.php
